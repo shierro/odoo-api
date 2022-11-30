@@ -2,9 +2,7 @@
 
 > [Odoo](https://www.odoo.com) JSON-RPC client
 
-
 This is a fork of [`odoo-connect`](https://github.com/pridiktiv/odoo-connect) with new added methods (read/count/readGroup) & HTTPS support.
-
 
 ## Install
 
@@ -12,32 +10,32 @@ This is a fork of [`odoo-connect`](https://github.com/pridiktiv/odoo-connect) wi
 $ npm install --save odoo-api
 ```
 
-
 ## Usage
 
 ```js
-const Odoo = require('odoo-api');
+const Odoo = require("odoo-api");
 
 const odoo = new Odoo({
-	host: 'foobar.com',
-	port: 9999
+	host: "foobar.com",
+	port: 9999,
 });
 
 odoo
 	.connect({
-		database: 'unicorn',
-		username: 'foo',
-		password: 'bar'
+		database: "unicorn",
+		username: "foo",
+		password: "bar",
 	})
-	.then(client => {
-		return client.searchRead('product.product', [['list_price', '>', '50']], {limit: 1});
+	.then((client) => {
+		return client.searchRead("product.product", [["list_price", ">", "50"]], {
+			limit: 1,
+		});
 	})
-	.then(products => {
+	.then((products) => {
 		console.log(products);
 		//=> [{list_price: 52, name: 'Unicorn'}]
 	});
 ```
-
 
 ## API
 
@@ -292,7 +290,6 @@ List of parameters.
 Type: `Object`
 
 Custom `kwargs` properties.
-
 
 ## License
 
